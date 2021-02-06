@@ -23,7 +23,7 @@ basic results.
 3. `RBC_CPP_2.cpp`: C++ code, more idiomatic but slightly slower.
 4. `RBC_F90.f90`: Fortran code.
 5. `RBC_Java.java`: Java code.
-6. `RBC_Julia.jl`: Julia code, to run RBC_Julia; @time main().
+6. `RBC_Julia.jl`: Julia code, to run `include("RBC_Julia.jl"); @time main()`.
 6. `RBC_Matlab.m`: Matlab code.
 8. `RBC_Matlab_Inside_Loop.m`: Matlab code with Mex file.
 9. `inside_loop_mex.cpp`: Mex file for 8.
@@ -38,6 +38,9 @@ basic results.
 18. `RBC_Mathematica_PartialCompilation`: Mathematica code with imperative
     structure and partial compilation.
 19. `RBC_CS.cs`: C# code.
+20. `RBC_JS.js`: Javascrip code.
+21. `RBC_Python_Cython.py`: Cython code.
+22. `RBC_Swift.swift`: Swift code.
 
 ## Compilation flags
 
@@ -51,6 +54,7 @@ basic results.
 8. Intel compiler: `ifortran -o testf -O3 RBC_F90.f90`
 9. `javac RBC_Java.java` and run as `java RBC_Java -XX:+AggressiveOpts`
 10. `RBC_C.c` can be compiled in C, C++ and Objective-C: `clang -o testc -x <language> -O3 RBC_C.c` with `<language>` = `c`, `c++` or `objective-c`. Same for GCC.
+11. Swift: `swiftc -o testswift -O RBC_Swift.swift -sdk $(xcrun --show-sdk-path --sdk macosx)`
 
 In all cases with a JIT, you may want to warm up the JIT before testing for
 speed.
